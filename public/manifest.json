@@ -1,0 +1,43 @@
+{
+  "name": "HB CLASSES - Online English Coaching",
+  "short_name": "HB CLASSES",
+  "description": "Premium online English coaching platform with live classes and video courses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07091a",
+  "theme_color": "#07091a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "learning"
+  ],
+  "lang": "en",
+  "screenshots": [
+    {
+      "src": "/screenshot-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-2.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
