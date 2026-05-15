@@ -8,11 +8,7 @@ import { Input } from '@/components/ui/Input';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import toast from 'react-hot-toast';
 
-interface AuthPageProps {
-  onLogin?: (user: any) => void;
-}
-
-export default function AuthPage({ onLogin }: AuthPageProps) {
+export default function AuthPage() {
   const [step, setStep] = useState<'email' | 'otp' | 'register' | 'pending'>('email');
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -104,9 +100,7 @@ export default function AuthPage({ onLogin }: AuthPageProps) {
       }
 
       toast.success('Login successful!');
-      onLogin?.(data.user);
 
-      // Redirect based on role
       setTimeout(() => {
         if (data.user.role === 'admin') {
           window.location.href = '/admin/dashboard';
@@ -220,7 +214,7 @@ export default function AuthPage({ onLogin }: AuthPageProps) {
                 </Button>
 
                 <p className="text-center text-xs text-muted mt-4">
-                  New user? Don't worry, we'll create your account automatically
+                  New user? Don&apos;t worry, we&apos;ll create your account automatically
                 </p>
               </motion.form>
             )}
@@ -309,7 +303,7 @@ export default function AuthPage({ onLogin }: AuthPageProps) {
                   size="lg"
                   isLoading={isLoading}
                 >
-                  Verify & Login
+                  Verify &amp; Login
                 </Button>
 
                 <div className="flex items-center justify-between text-sm">
