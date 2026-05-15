@@ -153,7 +153,6 @@ export default function AdminStudents() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
       <aside className="w-64 bg-surface border-r border-border fixed h-full">
         <div className="p-6">
           <Link href="/admin/dashboard" className="font-syne text-xl font-bold text-gradient">HB CLASSES</Link>
@@ -176,7 +175,6 @@ export default function AdminStudents() {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 ml-64">
         <header className="sticky top-0 z-40 glass border-b border-border px-8 py-4">
           <div className="flex items-center justify-between">
@@ -188,7 +186,6 @@ export default function AdminStudents() {
         </header>
 
         <div className="p-8">
-          {/* Filters */}
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             <div className="flex-1">
               <Input placeholder="Search students..." value={searchQuery}
@@ -206,7 +203,6 @@ export default function AdminStudents() {
             </div>
           </div>
 
-          {/* Students Table */}
           <Card>
             {filteredStudents.length === 0 ? (
               <div className="text-center py-12">
@@ -248,7 +244,7 @@ export default function AdminStudents() {
                           {student.device_fingerprint ? (
                             <Badge variant="info" size="sm">Bound</Badge>
                           ) : (
-                            <Badge variant="default" size="sm">Not Set</Badge>
+                            <Badge variant="warning" size="sm">Not Set</Badge>
                           )}
                         </td>
                         <td className="py-4 px-4 text-sm text-muted">
@@ -265,7 +261,7 @@ export default function AdminStudents() {
                               </Button>
                             )}
                             {!student.is_banned && (
-                              <Button size="sm" variant="default"
+                              <Button size="sm" variant="danger"
                                 isLoading={actionLoading === student.id}
                                 leftIcon={<XCircle className="w-4 h-4" />}
                                 onClick={() => handleBan(student.id)}>
@@ -273,7 +269,7 @@ export default function AdminStudents() {
                               </Button>
                             )}
                             {student.device_fingerprint && (
-                              <Button size="sm" variant="default"
+                              <Button size="sm" variant="ghost"
                                 isLoading={actionLoading === student.id}
                                 leftIcon={<RefreshCw className="w-4 h-4" />}
                                 onClick={() => handleResetDevice(student.id)}>
