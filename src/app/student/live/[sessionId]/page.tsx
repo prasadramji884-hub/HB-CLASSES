@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 import { 
   Radio, MessageCircle, Send, Pin, Trash2, Users, Clock, 
   AlertCircle, Play, Pause, Volume2, VolumeX, Maximize,
-  ChevronDown, ChevronUp, User
+  ChevronDown, ChevronUp, User, ChevronRight
 ChevronRight, } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
