@@ -46,7 +46,6 @@ export default function AdminStudents() {
 
   const fetchStudents = async () => {
     try {
-      // In production: fetch from /api/admin/students
       setStudents([]);
     } catch (error) {
       toast.error('Failed to load students');
@@ -84,7 +83,6 @@ export default function AdminStudents() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: studentId }),
       });
-
       if (response.ok) {
         toast.success('Student approved successfully');
         fetchStudents();
@@ -106,7 +104,6 @@ export default function AdminStudents() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: studentId }),
       });
-
       if (response.ok) {
         toast.success('Student banned successfully');
         fetchStudents();
@@ -128,7 +125,6 @@ export default function AdminStudents() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: studentId }),
       });
-
       if (response.ok) {
         toast.success('Device reset successfully');
         fetchStudents();
@@ -173,7 +169,7 @@ export default function AdminStudents() {
           ))}
         </nav>
         <div className="absolute bottom-0 left-0 right-0 p-4">
-          <Button variant=default" className="w-full justify-start text-red-400 hover:text-red-300 hover:bg-red-500/10"
+          <Button variant="ghost" className="w-full justify-start text-red-400 hover:text-red-300 hover:bg-red-500/10"
             leftIcon={<LogOut className="w-4 h-4" />} onClick={handleLogout}>
             Logout
           </Button>
@@ -252,7 +248,7 @@ export default function AdminStudents() {
                           {student.device_fingerprint ? (
                             <Badge variant="info" size="sm">Bound</Badge>
                           ) : (
-                            <Badge variant=default" size="sm">Not Set</Badge>
+                            <Badge variant="default" size="sm">Not Set</Badge>
                           )}
                         </td>
                         <td className="py-4 px-4 text-sm text-muted">
@@ -269,7 +265,7 @@ export default function AdminStudents() {
                               </Button>
                             )}
                             {!student.is_banned && (
-                              <Button size="sm" variant=default"
+                              <Button size="sm" variant="default"
                                 isLoading={actionLoading === student.id}
                                 leftIcon={<XCircle className="w-4 h-4" />}
                                 onClick={() => handleBan(student.id)}>
@@ -277,7 +273,7 @@ export default function AdminStudents() {
                               </Button>
                             )}
                             {student.device_fingerprint && (
-                              <Button size="sm" variant=default"
+                              <Button size="sm" variant="default"
                                 isLoading={actionLoading === student.id}
                                 leftIcon={<RefreshCw className="w-4 h-4" />}
                                 onClick={() => handleResetDevice(student.id)}>
