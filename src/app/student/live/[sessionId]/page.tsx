@@ -7,7 +7,9 @@ import {
   Radio, MessageCircle, Send, Pin, Trash2, Users, Clock, 
   AlertCircle, Play, Pause, Volume2, VolumeX, Maximize,
   ChevronDown, ChevronUp, User, ChevronRight
-ChevronRight, } from 'lucide-react';
+} from 'lucide-react';
+
+
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
