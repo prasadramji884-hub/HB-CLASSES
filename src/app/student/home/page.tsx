@@ -68,7 +68,7 @@ export default function StudentHome() {
               <Link href="/student/notifications">
                 <Button variant="ghost" size="sm" className="relative">
                   <Bell className="w-5 h-5" />
-                  {data?.notifications > 0 && (
+                  {(data?.notifications ?? 0) > 0 && (
                     <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">
                       {data.notifications}
                     </span>
