@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Maximize, AlertTriangle } from 'lucide-react';
-import toast from 'react-hot-toast';
+import toast from 'react-hot-toast'; import { Badge } from '@/components/ui/Badge';
 
 interface ProtectedVideoPlayerProps {
   videoId: string;
